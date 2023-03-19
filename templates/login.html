@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login</title>
+</head>
+<body>
+	<h1>Login</h1>
+    {% if error %}
+        <p style="color:red">{{ error }}</p>
+    {% endif %}
+	<form method="POST" action="{{ url_for('login') }}">
+		<label for="username">Username:</label>
+		<input type="text" id="username" name="username" value="{{ request.form.get('username') }}"><br><br>
+		<label for="password">Password:</label>
+		<input type="password" id="password" name="password" value="{{ request.form.get('password') }}"><br><br>
+		<input type="submit" value="Login">
+	</form>
+</body>
+</html>

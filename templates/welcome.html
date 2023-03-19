@@ -1,0 +1,16 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Welcome</title>
+  </head>
+  <body>
+    <h1>Welcome, {{ name }}!</h1>
+    <p>Thank you for logging in.</p><br><br>
+    <p> Get Data From Twitter as json file </p>
+    <form method="POST" action="{{ url_for('welcome') }}">
+		<label for="username">What do you want to search:</label>
+		<input type="text" id="search" name="search" value="{{ request.form.get('search') }}"><br><br>
+		<input type="submit" value="Try"><br><br>
+	</form>
+  </body>
+</html>
